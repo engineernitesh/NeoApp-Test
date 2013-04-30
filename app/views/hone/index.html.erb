@@ -13,8 +13,11 @@
 							<font face="FANTASY" color="#1C0876" size="16" align="center">Campus Navigator</font>
 						</p>
 		</td>
-		<td  valign="center" align="right">
+		<td  valign="center" align="center">
 			<a href="http://www.map-generator.org/aea4e9fc-d3ae-472e-aa26-030e9e47cb95/linked-map.aspx" target="_blank"> GoogleMap of SRH Campus</a>
+		</td>
+		<td>
+			Today:<%= Date.today %>
 		</td>
 	</tr>
 </table>
@@ -22,13 +25,12 @@
 <table>
 	<tr>	
 		
-		<td valign="center" align="left" width="50%">
+		<td valign="center" align="left" width="40%">
 		<%= render 'form' %>
 		<br/><br/><br/><br/>
 		</td>
 
 		<td align="top"  rowspan="3" width="40%">
-		<!-- <iframe src="http://www.map-generator.org/063c2a30-5116-44a8-b02a-0b9dbcb6100c/iframe-map.aspx" scrolling="no" height="400px" width="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><small><a href="http://www.map-generator.org/063c2a30-5116-44a8-b02a-0b9dbcb6100c/large-map.aspx" target="_blank">Open large map<a/></small> -->
 		<img src="/images/campusplan.jpg" height="500" width="600">
 		</td>
 		
@@ -83,7 +85,9 @@
 							<% end %>
 					<% end %>
 				</table>
-			<H3> Total Journey time = <%= @sum %> seconds </h3>
+				<br/>
+				<font size="4" color="#0000ff" align = "right">Total Journey time = <%= @sum/60 %> minutes <%= @sum%60 %> seconds </font>
+			
 			<% elsif defined?(@s_d_same) %>
 				<table width="700">
 					<tr>

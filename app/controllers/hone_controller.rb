@@ -1,6 +1,7 @@
 class HoneController < ApplicationController
 	def index
-		@neo = Neography::Rest.new							# refrence to neo4j graph
+		#@neo = Neography::Rest.new							# refrence to neo4j graph
+		@neo = Neography::Rest.new(ENV['NEO4J_URL'] || "http://localhost:7474")
 		@neo.set_node_auto_index_status(true)				# setting auto indexing true
 		@neo.add_node_auto_index_property("name")			# setting auto indexing on property "name" and "activity" because later we will do query to neo4j using these two properties
 		@neo.add_node_auto_index_property("activity")
